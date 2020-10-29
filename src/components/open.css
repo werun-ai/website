@@ -1,0 +1,72 @@
+.open {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 56px;
+}
+
+.open-main {
+  display: flex;
+}
+
+.open-image {
+  width: 661px;
+  height: 396px;
+  margin-right: 40px;
+  border-radius: 20px;
+}
+
+.open-title {
+  display: flex;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.open-title:after {
+  display: flex;
+  width: 65px;
+  height: 33px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  color: white;
+  content: '內測中';
+  font-size: 16px;
+}
+
+.open-checks-container {
+  margin-top: 20px;
+}
+
+.open-checks {
+  display: flex;
+}
+
+.open-checks .check-item {
+  width: 200px;
+}
+
+.check-item:before {
+  margin-right: 18px;
+  content: '✔︎';
+}
+
+.apply-button {
+  display: flex;
+  width: 131px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+  background-color: black;
+  color: white;
+  font-size: 22px;
+}
+
+.open-desc {
+  margin-top: 58px;
+  font-size: 18px;
+}

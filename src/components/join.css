@@ -1,0 +1,37 @@
+.join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 118px 244px;
+  background-image: url(../assets/join.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.join-title {
+  color: white;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.join-desc {
+  margin-top: 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.join-button {
+  display: flex;
+  width: 131px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  background-color: white;
+  color: black;
+  font-size: 22px;  
+}
