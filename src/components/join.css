@@ -35,3 +35,9 @@
   color: black;
   font-size: 22px;  
 }
+
+@media (max-width: 1024px) {
+  .join {
+    padding: 20px;
+  }
+}

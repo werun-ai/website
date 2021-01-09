@@ -68,3 +68,13 @@
   font-weight: 400;
   line-height: 1.4;
 }
+
+@media (max-width: 1024px) {
+  .card-image {
+    display: none;
+  }
+
+  .card-content {
+    padding: 20px 50px 30px 20px
+  }
+}

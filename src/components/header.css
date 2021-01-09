@@ -63,3 +63,13 @@
 .header-link:last-child {
 	margin-right: 0;
 }
+
+@media (max-width: 768px) {
+	.title-l1 {
+		flex-shrink: 0;
+	}
+
+	.header-link {
+		display: none;
+	}
+}

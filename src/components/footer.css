@@ -58,3 +58,24 @@
   font-weight: 100;
   text-decoration: none;
 }
+
+@media (max-width: 1024px) {
+  .footer {
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer > * {
+    flex-shrink: 0;
+  }
+
+  .footer-slot:nth-child(n+1) {
+    width: 120px;
+    margin-right: 20px;
+  }
+
+  .footer-slot {
+    margin-bottom: 20px;
+  }
+}

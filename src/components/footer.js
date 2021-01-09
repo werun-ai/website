@@ -23,7 +23,7 @@ const Footer = () => (
 
 		<div className="footer-slot">
 			<div className="slot-l1">联络我们</div>
-			<div className="slot-l2">hr@example.com</div>
+			<div className="slot-l2">marketing@werun.ai</div>
 		</div>
 
 		<div className="footer-slot">

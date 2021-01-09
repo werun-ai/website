@@ -6,7 +6,7 @@ const Header = () => {
 			<div className="logo" />
 			<div className="header-title">
 				<div className="title-l1">未然</div>
-				<div className="title-l2">构建美好的智能医疗世界</div>
+				<div className="title-l2">构建健康美好的智能医疗世界</div>
 			</div>
 
 			<a className="header-link" href="#solution">

@@ -6,6 +6,7 @@
 
 .open-main {
   display: flex;
+  justify-content: space-between;
 }
 
 .open-image {
@@ -69,4 +70,14 @@
 .open-desc {
   margin-top: 58px;
   font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  .open-image {
+    display: none;
+  }
+
+  .open-checks {
+    flex-direction: column;
+  }
 }
