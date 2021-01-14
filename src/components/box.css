@@ -1,0 +1,41 @@
+.box {
+  position: relative;
+  height: 550px;
+  background-image: url(../assets/bg-building.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.iphone {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 286px;
+  height: 592px;
+  padding: 60px 30px;
+  margin: 0 auto;
+  background-image: url(../assets/iphone.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.chat {
+  display: flex;
+  max-width: 200px;
+  flex-direction: column;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.left {
+  background-color: lightgray;
+}
+
+.right {
+  margin-left: auto;
+  background-color: #0cf;
+}
