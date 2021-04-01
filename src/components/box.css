@@ -7,6 +7,17 @@
   background-size: cover;
 }
 
+.box .intro {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 25px;
+  width: calc((100vw - 200px) / 2 - 100px);
+  margin: 75px auto;
+  color: white;
+  word-break: break-word;
+}
+
 .iphone {
   position: absolute;
   right: 0;
@@ -38,4 +49,19 @@
 .right {
   margin-left: auto;
   background-color: #0cf;
+}
+
+@media (max-width: 1024px) {
+  .box {
+    height: 600px;
+  }
+
+  .box .intro {
+    position: relative;
+    right: 0;
+    left: 0;
+    width: auto;
+    padding: 15px 10px;
+    margin: 0;
+  }
 }
