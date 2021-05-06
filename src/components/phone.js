@@ -1,62 +1,179 @@
 import React from "react";
-import { Drawer, List } from "antd-mobile";
+import { Menu, ActivityIndicator } from "antd-mobile";
 import "./phone.css";
 
-class App1 extends React.Component {
-	state = {
-		open: true,
-	};
-	onOpenChange = (...args) => {
-		console.log(args);
-		this.setState({ open: !this.state.open });
-	};
-	render() {
-		const sidebar = (
-			<List>
-				{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(
-					(i, index) => {
-						if (index === 0) {
-							return (
-								<List.Item
-									key={index}
-									thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-									multipleLine
-								>
-									Category
-								</List.Item>
-							);
-						}
-						return (
-							<List.Item
-								key={index}
-								thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-							>
-								Category{index}
-							</List.Item>
-						);
-					}
-				)}
-			</List>
-		);
+const data = [
+	{
+		value: "1",
+		label: "头和颈",
+		children: [
+			{
+				label: "脑",
+				value: "1",
+				disabled: false,
+			},
+			{
+				label: "耳",
+				value: "2",
+			},
+			{
+				label: "眼",
+				value: "3",
+			},
+			{
+				label: "口",
+				value: "4",
+			},
+			{
+				label: "颈",
+				value: "5",
+			},
+			{
+				label: "精神",
+				value: "6",
+			},
+			{
+				label: "鼻",
+				value: "7",
+			},
+		],
+	},
+	{
+		value: "2",
+		label: "胸和背部",
+		children: [
+			{
+				label: "乳房",
+				value: "1",
+			},
+			{
+				label: "心",
+				value: "2",
+				disabled: true,
+			},
+			{
+				label: "肺",
+				value: "3",
+			},
+			{
+				label: "背部上方",
+				value: "4",
+			},
+			{
+				label: "腰背部",
+				value: "5",
+			},
+			{
+				label: "胸和背部 - 其他",
+				value: "6",
+			},
+		],
+	},
+	{
+		value: "3",
+		label: "手",
+		isLeaf: true,
+		children: [
+			{
+				label: "手肘",
+				value: "1",
+			},
+		],
+	},
+];
 
+class MenuExample extends React.Component {
+	constructor(...args) {
+		super(...args);
+		this.state = {
+			initData: data,
+			show: true,
+		};
+	}
+	onChange = (value) => {
+		let label = "";
+		data.forEach((dataItem) => {
+			if (dataItem.value === value[0]) {
+				label = dataItem.label;
+				if (dataItem.children && value[1]) {
+					dataItem.children.forEach((cItem) => {
+						if (cItem.value === value[1]) {
+							label += ` ${cItem.label}`;
+						}
+					});
+				}
+			}
+		});
+		console.log(label);
+	};
+	handleClick = (e) => {
+		e.preventDefault(); // Fix event propagation on Android
+		this.setState({
+			show: !this.state.show,
+		});
+		// mock for async data loading
+		if (!this.state.initData) {
+			setTimeout(() => {
+				this.setState({
+					initData: data,
+				});
+			}, 500);
+		}
+	};
+
+	onMaskClick = () => {
+		this.setState({
+			show: true,
+		});
+	};
+
+	render() {
+		const { initData, show } = this.state;
+		const menuEl = (
+			<Menu
+				className="foo-menu"
+				data={initData}
+				value={["1", "3"]}
+				onChange={this.onChange}
+				height={document.documentElement.clientHeight * 0.6}
+			/>
+		);
+		const loadingEl = (
+			<div
+				style={{
+					width: "100%",
+					height: document.documentElement.clientHeight * 0.6,
+					display: "flex",
+					justifyContent: "center",
+				}}
+			>
+				<ActivityIndicator size="large" />
+			</div>
+		);
 		return (
-			<div className="phone">
-				<Drawer
-					className="my-drawer"
-					enableDragHandle
-					contentStyle={{
-						color: "#A6A6A6",
-						textAlign: "center",
-					}}
-					sidebar={sidebar}
-					open={this.state.open}
-					onOpenChange={this.onOpenChange}
-				>
-					Click upper-left corner
-				</Drawer>
+			<div className={show ? "menu-active" : ""}>
+				{/* <div>
+					<NavBar
+						leftContent="Menu"
+						mode="light"
+						icon={
+							<img
+								src="https://gw.alipayobjects.com/zos/rmsportal/iXVHARNNlmdCGnwWxQPH.svg"
+								className="am-icon am-icon-md"
+								alt=""
+							/>
+						}
+						onLeftClick={this.handleClick}
+						className="top-nav-bar"
+					>
+						Here is title
+					</NavBar>
+				</div> */}
+				{show ? (initData ? menuEl : loadingEl) : null}
+				{show ? <div className="menu-mask" onClick={this.onMaskClick} /> : null}
 			</div>
 		);
 	}
 }
 
-export default App1;
+export default MenuExample;
