@@ -1,67 +1,68 @@
 .box {
-  position: relative;
-  height: 550px;
-  background-image: url(../assets/bg-building.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	position: relative;
+	height: 550px;
+	background-image: url(../assets/bg-building.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .box .intro {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 25px;
-  width: calc((100vw - 200px) / 2 - 100px);
-  margin: 75px auto;
-  color: white;
-  word-break: break-word;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 25px;
+	width: calc((100vw - 200px) / 2 - 100px);
+	margin: 75px auto;
+	color: white;
+	word-break: break-word;
 }
 
 .iphone {
-  position: absolute;
-  right: 0;
-  left: 0;
-  width: 286px;
-  height: 592px;
-  padding: 60px 30px;
-  margin: 0 auto;
-  background-image: url(../assets/iphone.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+	position: absolute;
+	right: 0;
+	left: 0;
+	width: 286px;
+	height: 592px;
+	padding: 60px 30px;
+	margin: 0 auto;
+	background-image: url(../assets/iphone.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	overflow: hidden;
 }
 
 .chat {
-  display: flex;
-  max-width: 200px;
-  flex-direction: column;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 10px;
-  font-size: 14px;
+	display: flex;
+	max-width: 200px;
+	flex-direction: column;
+	padding: 10px;
+	margin: 5px 0;
+	border-radius: 10px;
+	font-size: 14px;
 }
 
 .left {
-  background-color: lightgray;
+	background-color: lightgray;
 }
 
 .right {
-  margin-left: auto;
-  background-color: #0cf;
+	margin-left: auto;
+	background-color: #0cf;
 }
 
 @media (max-width: 1024px) {
-  .box {
-    height: 600px;
-  }
+	.box {
+		height: 600px;
+	}
 
-  .box .intro {
-    position: relative;
-    right: 0;
-    left: 0;
-    width: auto;
-    padding: 15px 10px;
-    margin: 0;
-  }
+	.box .intro {
+		position: relative;
+		right: 0;
+		left: 0;
+		width: auto;
+		padding: 15px 10px;
+		margin: 0;
+	}
 }
