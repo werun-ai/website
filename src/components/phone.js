@@ -177,7 +177,7 @@ class MenuExample extends React.Component {
 			<Menu
 				className="foo-menu"
 				data={initData}
-				value={["2", "2"]}
+				value={["2", "5"]}
 				onChange={this.onChange}
 				height={document.documentElement.clientHeight * 0.6}
 			/>
@@ -199,24 +199,26 @@ class MenuExample extends React.Component {
 				</div>
 				<Tag>大量饮酒</Tag>
 				<Tag>外力触碰</Tag>
-				<Tag>以上都不符合</Tag>
+				<Tag selected>以上都不符合</Tag>
 				<div style={{ fontWeight: "bold" }}>
 					<br />
 					反酸的程度是什么样的？
 				</div>
 				<Tag>加重</Tag>
-				<Tag>容易</Tag>
+				<Tag selected>容易</Tag>
 				<Tag>轻度</Tag>
 				<Tag>稍微</Tag>
 				<Tag>以上都不符合</Tag>
 			</div>
 		);
 
+		const topicEl = null;
+
 		return (
 			<Slider {...settings}>
 				<div>{menuEl}</div>
 				<div>{pillEl}</div>
-				<div>{menuEl}</div>
+				<div>{topicEl}</div>
 			</Slider>
 		);
 	}
