@@ -218,7 +218,7 @@ class MenuExample extends React.Component {
 			<Slider {...settings}>
 				<div>{menuEl}</div>
 				<div>{pillEl}</div>
-				<div>{topicEl}</div>
+				{/* <div>{topicEl}</div> */}
 			</Slider>
 		);
 	}
