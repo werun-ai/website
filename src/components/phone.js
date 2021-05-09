@@ -10,7 +10,6 @@ const data = [
 			{
 				label: "脑",
 				value: "1",
-				disabled: false,
 			},
 			{
 				label: "耳",
@@ -40,6 +39,40 @@ const data = [
 	},
 	{
 		value: "2",
+		label: "胃",
+		children: [
+			{
+				label: "呕吐",
+				value: "1",
+			},
+			{
+				label: "胃胀",
+				value: "2",
+			},
+			{
+				label: "纳少",
+				value: "3",
+			},
+			{
+				label: "食欲不振",
+				value: "4",
+			},
+			{
+				label: "反酸",
+				value: "5",
+			},
+			{
+				label: "打饱嗝",
+				value: "6",
+			},
+			{
+				label: "多食",
+				value: "7",
+			},
+		],
+	},
+	{
+		value: "3",
 		label: "胸和背部",
 		children: [
 			{
@@ -49,7 +82,6 @@ const data = [
 			{
 				label: "心",
 				value: "2",
-				disabled: true,
 			},
 			{
 				label: "肺",
@@ -70,7 +102,7 @@ const data = [
 		],
 	},
 	{
-		value: "3",
+		value: "4",
 		label: "手",
 		isLeaf: true,
 		children: [
@@ -133,7 +165,7 @@ class MenuExample extends React.Component {
 			<Menu
 				className="foo-menu"
 				data={initData}
-				value={["1", "3"]}
+				value={["2", "2"]}
 				onChange={this.onChange}
 				height={document.documentElement.clientHeight * 0.6}
 			/>
