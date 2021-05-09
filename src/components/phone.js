@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, ActivityIndicator } from "antd-mobile";
+import { Menu, ActivityIndicator, Tag } from "antd-mobile";
 import Slider from "react-slick";
 import "./phone.css";
 
@@ -172,6 +172,7 @@ class MenuExample extends React.Component {
 
 	render() {
 		const { initData, show } = this.state;
+
 		const menuEl = (
 			<Menu
 				className="foo-menu"
@@ -181,38 +182,41 @@ class MenuExample extends React.Component {
 				height={document.documentElement.clientHeight * 0.6}
 			/>
 		);
-		const loadingEl = (
-			<div
-				style={{
-					width: "100%",
-					height: document.documentElement.clientHeight * 0.6,
-					display: "flex",
-					justifyContent: "center",
-				}}
-			>
-				<ActivityIndicator size="large" />
+
+		const pillEl = (
+			<div className="tag-container">
+				<div style={{ fontWeight: "bold" }}>反酸发生了多长时间？</div>
+				<Tag>10 分钟内</Tag>
+				<Tag>10 分钟到 1 天</Tag>
+				<Tag>1 - 14 天</Tag>
+				<Tag>14 - 30 天</Tag>
+				<Tag>1 - 3 月</Tag>
+				<Tag selected>3 个月以上</Tag>
+				<Tag>以上都不符合</Tag>
+				<div style={{ fontWeight: "bold" }}>
+					<br />
+					反酸发生前是否有过以下情况？
+				</div>
+				<Tag>大量饮酒</Tag>
+				<Tag>外力触碰</Tag>
+				<Tag>以上都不符合</Tag>
+				<div style={{ fontWeight: "bold" }}>
+					<br />
+					反酸的程度是什么样的？
+				</div>
+				<Tag>加重</Tag>
+				<Tag>容易</Tag>
+				<Tag>轻度</Tag>
+				<Tag>稍微</Tag>
+				<Tag>以上都不符合</Tag>
 			</div>
 		);
+
 		return (
 			<Slider {...settings}>
-				<div className={show ? "menu-active" : ""}>
-					{show ? (initData ? menuEl : loadingEl) : null}
-					{show ? (
-						<div className="menu-mask" onClick={this.onMaskClick} />
-					) : null}
-				</div>
-				<div className={show ? "menu-active" : ""}>
-					{show ? (initData ? menuEl : loadingEl) : null}
-					{show ? (
-						<div className="menu-mask" onClick={this.onMaskClick} />
-					) : null}
-				</div>
-				<div className={show ? "menu-active" : ""}>
-					{show ? (initData ? menuEl : loadingEl) : null}
-					{show ? (
-						<div className="menu-mask" onClick={this.onMaskClick} />
-					) : null}
-				</div>
+				<div>{menuEl}</div>
+				<div>{pillEl}</div>
+				<div>{menuEl}</div>
 			</Slider>
 		);
 	}
