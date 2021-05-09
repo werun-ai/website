@@ -8,10 +8,11 @@ import "./slide.css";
 const settings = {
 	dots: true,
 	infinite: true,
-	speed: 500,
 	slideToShow: 1,
 	slidesToScroll: 1,
 	arrows: false,
+	autoplay: true,
+	autoplaySpeed: 5000,
 };
 
 const Card = ({ image, l1, l2, l3 }) => (

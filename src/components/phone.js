@@ -1,6 +1,17 @@
 import React from "react";
 import { Menu, ActivityIndicator } from "antd-mobile";
+import Slider from "react-slick";
 import "./phone.css";
+
+const settings = {
+	dots: true,
+	infinite: true,
+	slideToShow: 1,
+	slidesToScroll: 1,
+	arrows: false,
+	autoplay: true,
+	autoplaySpeed: 2000,
+};
 
 const data = [
 	{
@@ -183,27 +194,26 @@ class MenuExample extends React.Component {
 			</div>
 		);
 		return (
-			<div className={show ? "menu-active" : ""}>
-				{/* <div>
-					<NavBar
-						leftContent="Menu"
-						mode="light"
-						icon={
-							<img
-								src="https://gw.alipayobjects.com/zos/rmsportal/iXVHARNNlmdCGnwWxQPH.svg"
-								className="am-icon am-icon-md"
-								alt=""
-							/>
-						}
-						onLeftClick={this.handleClick}
-						className="top-nav-bar"
-					>
-						Here is title
-					</NavBar>
-				</div> */}
-				{show ? (initData ? menuEl : loadingEl) : null}
-				{show ? <div className="menu-mask" onClick={this.onMaskClick} /> : null}
-			</div>
+			<Slider {...settings}>
+				<div className={show ? "menu-active" : ""}>
+					{show ? (initData ? menuEl : loadingEl) : null}
+					{show ? (
+						<div className="menu-mask" onClick={this.onMaskClick} />
+					) : null}
+				</div>
+				<div className={show ? "menu-active" : ""}>
+					{show ? (initData ? menuEl : loadingEl) : null}
+					{show ? (
+						<div className="menu-mask" onClick={this.onMaskClick} />
+					) : null}
+				</div>
+				<div className={show ? "menu-active" : ""}>
+					{show ? (initData ? menuEl : loadingEl) : null}
+					{show ? (
+						<div className="menu-mask" onClick={this.onMaskClick} />
+					) : null}
+				</div>
+			</Slider>
 		);
 	}
 }
